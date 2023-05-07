@@ -4,3 +4,17 @@
   box-sizing: border-box;
 }
 
+.mouse-menu{
+  background-color: bisque;
+  font-size: 1.2rem;
+  position: absolute;
+  width: 80px;
+  padding: 2px 0px;
+  top: 292px;
+  left: 235px;
+}
+
+.mouse-menu>p:hover{
+  background-color: white;
+  cursor: pointer;
+}
