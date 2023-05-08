@@ -1,3 +1,5 @@
+import Countdown from "./countdown";
+
 const Header = ()=>{
     return(
         <div className="header">
@@ -7,7 +9,7 @@ const Header = ()=>{
                 <li></li>
             </ul>
             <h1>Where's waldo</h1>
-            <h1></h1>
+            <Countdown />
         </div>
     )
 }
