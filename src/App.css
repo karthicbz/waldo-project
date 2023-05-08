@@ -17,3 +17,11 @@
   background-color: white;
   cursor: pointer;
 }
+
+.header{
+  background-color: rgb(219, 119, 119);
+  height: 70px;
+  display: flex;
+  align-items: center;
+  color: white;
+}

@@ -1,6 +1,7 @@
 import './App.css';
 import findWaldoImage from './images/waldo1.jpg';
 import MouseMenu from './components/mouseMenu';
+import Header from './components/header';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <img src={findWaldoImage} alt='waldo' onClick={handleClick}/>
       <MouseMenu handleMenu={mouseMenu}/>
     </div>
