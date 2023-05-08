@@ -6,7 +6,7 @@ function App() {
 
   function handleClick(e){
     const menu = document.querySelector('.mouse-menu');
-    menu.setAttribute('style', `top:${e.pageY}px; left:${e.pageX}px`);
+    menu.hasAttribute('style')?menu.removeAttribute('style'):menu.setAttribute('style', `top:${e.pageY}px; left:${e.pageX}px; display: block;`);
   }
 
   function mouseMenu(e){

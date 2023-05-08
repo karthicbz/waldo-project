@@ -10,8 +10,7 @@
   position: absolute;
   width: 80px;
   padding: 2px 0px;
-  top: 292px;
-  left: 235px;
+  display: none;
 }
 
 .mouse-menu>p:hover{
