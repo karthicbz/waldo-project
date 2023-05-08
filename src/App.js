@@ -3,16 +3,15 @@ import findWaldoImage from './images/waldo1.jpg';
 import MouseMenu from './components/mouseMenu';
 import Header from './components/header';
 import gameOne from './data/gameOne';
+import { gameTimer } from './scripts/gameTimer';
+import { useState } from 'react';
 
 function App() {
   let currentMousePos;
+  // const [gameComplete, setGameComplete]
 
   function handleClick(e){
     currentMousePos = e;
-    // if(!(e.pageX<gameOne[0].characterPos['x']-5 || e.pageX>gameOne[0].characterPos['x']+5 || e.pageX===gameOne[0].characterPos['x'])
-    // && !(e.pageY<gameOne[0].characterPos['y']-12 || e.pageY>gameOne[0].characterPos['y']+12 || e.pageY===gameOne[0].characterPos['y'])){
-    //   console.log('you found odlaw')
-    // }
     const menu = document.querySelector('.mouse-menu');
     menu.hasAttribute('style')?menu.removeAttribute('style'):menu.setAttribute('style', `top:${e.pageY}px; left:${e.pageX}px; display: block;`);
   }
