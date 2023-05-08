@@ -5,10 +5,12 @@ import Header from './components/header';
 import gameOne from './data/gameOne';
 import { gameTimer } from './scripts/gameTimer';
 import { useState } from 'react';
+import GameOverScreen from './components/gameOverScreen';
 
 function App() {
   let currentMousePos;
   const [gameComplete, setGameComplete] = useState(false);
+  const [completeTime, setCompleteTime] = useState(0);
 
   function handleClick(e){
     currentMousePos = e;
@@ -37,15 +39,18 @@ function App() {
 
     if(foundAll){
       setGameComplete(true);
-      console.log(document.querySelector('.countdown').textContent);
+      // console.log(document.querySelector('.countdown').textContent);
+      setCompleteTime(document.querySelector('.countdown').textContent);
+      document.querySelector('.game-over-screen').setAttribute('style', 'display:flex;');
     }
   }
 
   return (
     <div className="App">
       <Header gameStatus={gameComplete}/>
-      <img src={findWaldoImage} alt='waldo' onClick={handleClick}/>
+      <img src={findWaldoImage} alt='waldo' onClick={handleClick} className='game-screen'/>
       <MouseMenu handleMenu={mouseMenu}/>
+      <GameOverScreen time={completeTime}/>
     </div>
   );
 }
