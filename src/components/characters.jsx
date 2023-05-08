@@ -5,7 +5,7 @@ const Characters = ()=>{
         <div className="characters">
             {gameOne.map(character=>{
                 return(
-                    <img src={character.characterImg} alt="character to find"/>
+                    <img src={character.characterImg} alt="character to find" className={character.character}/>
                 )
             })}
         </div>

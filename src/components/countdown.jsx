@@ -29,7 +29,7 @@ const Countdown = ()=>{
     }, [dummyTime])
 
     return(
-        <h1>{Math.floor(time/3600)+':'+Math.floor(time/60)+':'+dummyTime}</h1>
+        <h1 className="countdown">{Math.floor(time/3600)+':'+Math.floor(time/60)+':'+dummyTime}</h1>
     )
 }
 
