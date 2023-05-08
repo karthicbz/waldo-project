@@ -1,13 +1,10 @@
 import Countdown from "./countdown";
+import Characters from "./characters";
 
 const Header = ()=>{
     return(
         <div className="header">
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+            <Characters />
             <h1>Where's waldo</h1>
             <Countdown />
         </div>
