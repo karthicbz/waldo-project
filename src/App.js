@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 function App() {
   let currentMousePos;
-  // const [gameComplete, setGameComplete]
+  const [gameComplete, setGameComplete] = useState(false);
 
   function handleClick(e){
     currentMousePos = e;
@@ -36,13 +36,14 @@ function App() {
     })
 
     if(foundAll){
+      setGameComplete(true);
       console.log(document.querySelector('.countdown').textContent);
     }
   }
 
   return (
     <div className="App">
-      <Header />
+      <Header gameStatus={gameComplete}/>
       <img src={findWaldoImage} alt='waldo' onClick={handleClick}/>
       <MouseMenu handleMenu={mouseMenu}/>
     </div>

@@ -14,11 +14,22 @@
   border: 1px solid black;
   border-radius: 5px;
 }
+
+.mouse-menu>div{
+  display: flex;
+  gap: 2px;
+  margin: 1px 0;
+}
+
+.mouse-menu>div>img{
+  width: 20px;
+}
+
 .mouse-menu>p{
   padding-left: 3px;
 }
 
-.mouse-menu>p:hover{
+.mouse-menu>div:hover{
   background-color: white;
   cursor: pointer;
 }

@@ -1,35 +1,43 @@
 import { useEffect, useState } from "react";
 import {gameTimer} from "../scripts/gameTimer";
 
-const Countdown = ()=>{
+const Countdown = ({gameStatus})=>{
     const [time, setTime] = useState(0);
     const [dummyTime, setDummyTime] = useState(0);
 
+    function setGameTime(){
+        setTime(prevTime=>prevTime+1)
+    }
+
     useEffect(()=>{
-        function setGameTime(){
-            setTime(prevTime=>prevTime+1)
+        const {myGameTimer, clearGameTimer} = gameTimer(setGameTime);
+
+        if(gameStatus){
+            clearGameTimer();
         }
-        
-        const gameTime = gameTimer(setGameTime);
 
         return ()=>{
-            clearInterval(gameTime.myGameTimer);
+            clearInterval(myGameTimer);
         }
     }, [time])
 
+    function setDummyGameTime(){
+        if(dummyTime>58){
+            setDummyTime(0);
+        }else{
+            setDummyTime(prevDummyTime=>prevDummyTime+1);
+        }
+    }
+
     useEffect(()=>{
-        function setDummyGameTime(){
-            if(dummyTime>58){
-                setDummyTime(0);
-            }else{
-                setDummyTime(prevDummyTime=>prevDummyTime+1);
-            }
+        const {myGameTimer, clearGameTimer} = gameTimer(setDummyGameTime);
+
+        if(gameStatus){
+            clearGameTimer();
         }
 
-        const dummyGameTime = gameTimer(setDummyGameTime);
-
         return ()=>{
-            clearInterval(dummyGameTime.myGameTimer);
+            clearInterval(myGameTimer);
         }
     }, [dummyTime])
 
