@@ -93,3 +93,7 @@
 .game-modes>div:hover{
   cursor: pointer;
 }
+
+.game-screen{
+  margin-top: 70px;
+}

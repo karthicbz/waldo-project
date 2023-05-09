@@ -8,7 +8,7 @@ const getCurrentImage = (val)=>{
     }else if(val === 'gametwo'){
         currentGameImage = gameScreenData[1].gametwo;
     }else if(val === 'gamethree'){
-        currentGameImage = gameScreenData[0].gamethree;
+        currentGameImage = gameScreenData[2].gamethree;
     }
     return currentGameImage;
 }
