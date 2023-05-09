@@ -16,14 +16,14 @@ function App() {
   const [charPosition, setCharPosition] = useState([]);
 
   async function getFirebaseData(){
+    let tempCharPosition = [];
     const db = getFirestore(app);
     const snapshot = await getDocs(collection(db, 'GameOneData'));
     snapshot.forEach(doc=>{
-      setCharPosition([...charPosition, doc.data()]);
+      tempCharPosition = [...tempCharPosition, {character: doc.id, characterPos: doc.data()}];
     });
-    // setCharPosition(snapshot.forEach(doc=>{
-    //   return [...charPosition, doc.data()];
-    // }));
+    console.log(tempCharPosition);
+    setCharPosition(tempCharPosition);
   }
 
   useEffect(()=>{
@@ -38,9 +38,9 @@ function App() {
   }
 
   function mouseMenu(e){
-    // console.log(currentMousePos);
+    console.log(charPosition);
     let foundAll = true;
-    gameOne.forEach(character=>{
+    charPosition.forEach(character=>{
       if(e.target.textContent === character.character){
         if(!(currentMousePos.pageX<character.characterPos['x']-10 || currentMousePos.pageX>character.characterPos['x']+10 || currentMousePos.pageX===character.characterPos['x'])
         && !(currentMousePos.pageY<character.characterPos['y']-20 || currentMousePos.pageY>character.characterPos['y']+20 || currentMousePos.pageY===character.characterPos['y'])){
