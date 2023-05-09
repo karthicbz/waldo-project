@@ -1,7 +1,7 @@
 import gameScreenData from "./gameScreenData";
 
 const getCurrentImage = (val)=>{
-    console.log(val);
+    // console.log(val);
     let currentGameImage = '';
     if(val === 'gameone'){
         currentGameImage = gameScreenData[0].gameone;

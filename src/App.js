@@ -16,7 +16,7 @@ function App() {
 
   const params = useParams();
   let currentGameImage = getCurrentImage(Object.values(params)[0]);
-  console.log(currentGameImage);
+  // console.log(currentGameImage);
   
   async function getFirebaseData(){
     let tempGameDetails = [];
@@ -32,11 +32,11 @@ function App() {
 
   useEffect(()=>{
     getFirebaseData();
-    // console.log(charPosition);
+    // console.log(gameDetails);
   }, [])
 
   function handleClick(e){
-    console.log(e.pageX, e.pageY);
+    // console.log(e.pageX, e.pageY);
     currentMousePos = e;
     const menu = document.querySelector('.mouse-menu');
     menu.hasAttribute('style')?menu.removeAttribute('style'):menu.setAttribute('style', `top:${e.pageY}px; left:${e.pageX}px; display: block;`);
@@ -73,7 +73,7 @@ function App() {
       <Header gameStatus={gameComplete} details={gameDetails}/>
       <img src={currentGameImage} alt='waldo' onClick={handleClick} className='game-screen'/>
       <MouseMenu handleMenu={mouseMenu} gameDetails={gameDetails}/>
-      <GameOverScreen time={completeTime}/>
+      <GameOverScreen time={completeTime} params={params}/>
     </div>
   );
 }
