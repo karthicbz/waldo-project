@@ -1,14 +1,12 @@
 import './App.css';
-import findWaldoImage from './images/waldo1.jpg';
 import MouseMenu from './components/mouseMenu';
 import Header from './components/header';
-// import gameOne from './data/gameOne';
-// import { gameTimer } from './scripts/gameTimer';
 import { useEffect, useState } from 'react';
 import GameOverScreen from './components/gameOverScreen';
 import app from './scripts/firebaseInitializer';
 import {collection, getDocs, getFirestore} from "firebase/firestore";
 import { useParams } from 'react-router-dom';
+import getCurrentImage from './data/currentImage';
 
 function App() {
   let currentMousePos;
@@ -17,8 +15,8 @@ function App() {
   const [gameDetails, setGameDetails] = useState([]);
 
   const params = useParams();
-  console.log(params);
-
+  let currentGameImage = getCurrentImage(Object.values(params)[0]);
+  
   async function getFirebaseData(){
     let tempGameDetails = [];
     const db = getFirestore(app);
@@ -71,7 +69,7 @@ function App() {
   return (
     <div className="App">
       <Header gameStatus={gameComplete} details={gameDetails}/>
-      <img src={findWaldoImage} alt='waldo' onClick={handleClick} className='game-screen'/>
+      <img src={currentGameImage} alt='waldo' onClick={handleClick} className='game-screen'/>
       <MouseMenu handleMenu={mouseMenu} gameDetails={gameDetails}/>
       <GameOverScreen time={completeTime}/>
     </div>
