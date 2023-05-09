@@ -60,11 +60,6 @@
   opacity: 0.3;
 }
 
-.game-screen{
-  /* z-index: 1;
-  position: absolute; */
-}
-
 .game-over-screen{
   background-color: rgba(222, 184, 135, 0.5);
   position: absolute;
@@ -81,4 +76,20 @@
 
 .game-over-screen>p{
   font-size: 2rem;
+}
+
+.game-modes{
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+}
+
+.game-modes>div{
+  width: 200px;
+  height: 200px;
+  background-color: cadetblue;
+}
+
+.game-modes>div:hover{
+  cursor: pointer;
 }

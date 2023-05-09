@@ -2,18 +2,22 @@ import './App.css';
 import findWaldoImage from './images/waldo1.jpg';
 import MouseMenu from './components/mouseMenu';
 import Header from './components/header';
-import gameOne from './data/gameOne';
-import { gameTimer } from './scripts/gameTimer';
+// import gameOne from './data/gameOne';
+// import { gameTimer } from './scripts/gameTimer';
 import { useEffect, useState } from 'react';
 import GameOverScreen from './components/gameOverScreen';
 import app from './scripts/firebaseInitializer';
-import {collection, doc, getDocs, getFirestore} from "firebase/firestore";
+import {collection, getDocs, getFirestore} from "firebase/firestore";
+import { useParams } from 'react-router-dom';
 
 function App() {
   let currentMousePos;
   const [gameComplete, setGameComplete] = useState(false);
   const [completeTime, setCompleteTime] = useState(0);
   const [gameDetails, setGameDetails] = useState([]);
+
+  const params = useParams();
+  console.log(params);
 
   async function getFirebaseData(){
     let tempGameDetails = [];
