@@ -16,7 +16,7 @@ function App() {
 
   const params = useParams();
   let currentGameImage = getCurrentImage(Object.values(params)[0]);
-  
+  console.log(currentGameImage);
   async function getFirebaseData(){
     let tempGameDetails = [];
     const db = getFirestore(app);
