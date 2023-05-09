@@ -1,9 +1,9 @@
 import gameOne from "../data/gameOne";
 
-const MouseMenu = ({handleMenu})=>{
+const MouseMenu = ({handleMenu, gameDetails})=>{
     return(
         <div className="mouse-menu" onClick={handleMenu}>
-            {gameOne.map(character=>{
+            {gameDetails.map(character=>{
                 return(
                     <div>
                         <img src={character.characterImg} alt="character"/>

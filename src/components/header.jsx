@@ -1,10 +1,10 @@
 import Countdown from "./countdown";
 import Characters from "./characters";
 
-const Header = ({gameStatus})=>{
+const Header = ({gameStatus, details})=>{
     return(
         <div className="header">
-            <Characters />
+            <Characters details={details}/>
             <h1>Where's waldo</h1>
             <Countdown gameStatus={gameStatus}/>
         </div>

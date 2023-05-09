@@ -20,7 +20,8 @@ function App() {
     const db = getFirestore(app);
     const snapshot = await getDocs(collection(db, 'GameOneData'));
     snapshot.forEach(doc=>{
-      tempGameDetails = [...tempGameDetails, {character: doc.id, characterPos: {x:doc.data()['x'], y:doc.data()['y']}, found:doc.data()['found']}];
+      tempGameDetails = [...tempGameDetails, {character: doc.id, characterPos: {x:doc.data()['x'], y:doc.data()['y']}, 
+      found:doc.data()['found'], characterImg:doc.data()['characterImg']}];
     });
     // console.log(tempCharPosition);
     setGameDetails(tempGameDetails);
@@ -65,9 +66,9 @@ function App() {
 
   return (
     <div className="App">
-      <Header gameStatus={gameComplete}/>
+      <Header gameStatus={gameComplete} details={gameDetails}/>
       <img src={findWaldoImage} alt='waldo' onClick={handleClick} className='game-screen'/>
-      <MouseMenu handleMenu={mouseMenu}/>
+      <MouseMenu handleMenu={mouseMenu} gameDetails={gameDetails}/>
       <GameOverScreen time={completeTime}/>
     </div>
   );
