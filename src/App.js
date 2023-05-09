@@ -17,10 +17,11 @@ function App() {
   const params = useParams();
   let currentGameImage = getCurrentImage(Object.values(params)[0]);
   console.log(currentGameImage);
+  
   async function getFirebaseData(){
     let tempGameDetails = [];
     const db = getFirestore(app);
-    const snapshot = await getDocs(collection(db, 'GameOneData'));
+    const snapshot = await getDocs(collection(db, `${Object.values(params)[0]}`));
     snapshot.forEach(doc=>{
       tempGameDetails = [...tempGameDetails, {character: doc.id, characterPos: {x:doc.data()['x'], y:doc.data()['y']}, 
       found:doc.data()['found'], characterImg:doc.data()['characterImg']}];
@@ -35,6 +36,7 @@ function App() {
   }, [])
 
   function handleClick(e){
+    console.log(e.pageX, e.pageY);
     currentMousePos = e;
     const menu = document.querySelector('.mouse-menu');
     menu.hasAttribute('style')?menu.removeAttribute('style'):menu.setAttribute('style', `top:${e.pageY}px; left:${e.pageX}px; display: block;`);
