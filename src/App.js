@@ -13,17 +13,17 @@ function App() {
   let currentMousePos;
   const [gameComplete, setGameComplete] = useState(false);
   const [completeTime, setCompleteTime] = useState(0);
-  const [charPosition, setCharPosition] = useState([]);
+  const [gameDetails, setGameDetails] = useState([]);
 
   async function getFirebaseData(){
-    let tempCharPosition = [];
+    let tempGameDetails = [];
     const db = getFirestore(app);
     const snapshot = await getDocs(collection(db, 'GameOneData'));
     snapshot.forEach(doc=>{
-      tempCharPosition = [...tempCharPosition, {character: doc.id, characterPos: doc.data()}];
+      tempGameDetails = [...tempGameDetails, {character: doc.id, characterPos: {x:doc.data()['x'], y:doc.data()['y']}, found:doc.data()['found']}];
     });
-    console.log(tempCharPosition);
-    setCharPosition(tempCharPosition);
+    // console.log(tempCharPosition);
+    setGameDetails(tempGameDetails);
   }
 
   useEffect(()=>{
@@ -38,9 +38,8 @@ function App() {
   }
 
   function mouseMenu(e){
-    console.log(charPosition);
     let foundAll = true;
-    charPosition.forEach(character=>{
+    gameDetails.forEach(character=>{
       if(e.target.textContent === character.character){
         if(!(currentMousePos.pageX<character.characterPos['x']-10 || currentMousePos.pageX>character.characterPos['x']+10 || currentMousePos.pageX===character.characterPos['x'])
         && !(currentMousePos.pageY<character.characterPos['y']-20 || currentMousePos.pageY>character.characterPos['y']+20 || currentMousePos.pageY===character.characterPos['y'])){
@@ -50,7 +49,7 @@ function App() {
       }
     })
 
-    gameOne.forEach(character=>{
+    gameDetails.forEach(character=>{
       if(character.found === false){
         foundAll = false;
       }
