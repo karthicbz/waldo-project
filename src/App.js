@@ -4,13 +4,32 @@ import MouseMenu from './components/mouseMenu';
 import Header from './components/header';
 import gameOne from './data/gameOne';
 import { gameTimer } from './scripts/gameTimer';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import GameOverScreen from './components/gameOverScreen';
+import app from './scripts/firebaseInitializer';
+import {collection, doc, getDocs, getFirestore} from "firebase/firestore";
 
 function App() {
   let currentMousePos;
   const [gameComplete, setGameComplete] = useState(false);
   const [completeTime, setCompleteTime] = useState(0);
+  const [charPosition, setCharPosition] = useState([]);
+
+  async function getFirebaseData(){
+    const db = getFirestore(app);
+    const snapshot = await getDocs(collection(db, 'GameOneData'));
+    snapshot.forEach(doc=>{
+      setCharPosition([...charPosition, doc.data()]);
+    });
+    // setCharPosition(snapshot.forEach(doc=>{
+    //   return [...charPosition, doc.data()];
+    // }));
+  }
+
+  useEffect(()=>{
+    getFirebaseData();
+    // console.log(charPosition);
+  }, [])
 
   function handleClick(e){
     currentMousePos = e;
