@@ -18,6 +18,10 @@ const StartScreen = ()=>{
                     )
                 })}
             </div>
+            <div>
+                <p>Want to to where you are</p>
+                <Link to={"/leaderboard"}><button>View Leaderboard</button></Link>
+            </div>
         </div>
     )
 }

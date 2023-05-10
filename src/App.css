@@ -97,3 +97,50 @@
 .game-screen{
   margin-top: 70px;
 }
+
+.lead-to-home>a>button{
+  padding: 0.8rem;
+  margin: 4px;
+  background-color: rgb(224, 102, 102);
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.leaderboard-heading{
+  text-align: center;
+}
+
+.leaderboard-menu{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 200px;
+}
+
+.leaderboard-menu>button{
+  padding: 2rem;
+  border: none;
+  background-color: rgb(102, 189, 224);
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 8px;
+}
+
+.score-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  margin: 5px auto;
+  /* border: 1px solid gray; */
+  box-shadow: 1px 1px 7px 0.7px rgb(194, 193, 193);
+  border-radius: 3px;
+}
+
+.score-row>p{
+  font-size: 1.2rem;
+  padding: 10px;
+}
+
