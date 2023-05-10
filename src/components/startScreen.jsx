@@ -28,7 +28,7 @@ const StartScreen = ()=>{
                 })}
             </div>
             <div className='start-to-lead'>
-                <p>Want to to where you are</p>
+                <p>Want to know where you are</p>
                 <Link to={"/leaderboard"}><button>View Leaderboard</button></Link>
             </div>
         </div>

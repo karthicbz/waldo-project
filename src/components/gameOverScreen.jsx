@@ -60,7 +60,7 @@ const GameOverScreen = ({time, params})=>{
             <p>You completed the game in {time}</p>
             <input type="text" placeholder="Your name.." className="player-name-input"/>
             <button onClick={saveData} className="save-score">Save</button>
-            <Link to={"/"}><button>Home</button></Link>
+            <Link to={"/"}><button className="gameover-to-home">Home</button></Link>
         </div>
     )
 }

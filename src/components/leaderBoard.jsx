@@ -25,7 +25,7 @@ const LeaderBoard = ()=>{
     }
 
     return(
-        <div>
+        <div className="leader-board">
             <div className="lead-to-home"><Link to={"/"}><button>Home</button></Link></div>
             <h1 className="leaderboard-heading">Welcome to leaderboard</h1>
             <div className="leaderboard-menu">

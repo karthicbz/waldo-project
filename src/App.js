@@ -39,7 +39,11 @@ function App() {
     // console.log(e.pageX, e.pageY);
     currentMousePos = e;
     const menu = document.querySelector('.mouse-menu');
-    menu.hasAttribute('style')?menu.removeAttribute('style'):menu.setAttribute('style', `top:${e.pageY}px; left:${e.pageX}px; display: block;`);
+    if(gameComplete !==true){
+      menu.hasAttribute('style')?menu.removeAttribute('style'):menu.setAttribute('style', `top:${e.pageY}px; left:${e.pageX}px; display: block;`);
+    }else{
+      menu.removeAttribute('style');
+    }
   }
 
   function mouseMenu(e){
