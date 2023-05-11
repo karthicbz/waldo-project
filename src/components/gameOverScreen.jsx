@@ -35,12 +35,19 @@ const GameOverScreen = ({time, params})=>{
         }
     }
 
-    function saveData(){
+    function saveData(e){
         const playerName = document.querySelector('.player-name-input');
-        if(scores !== undefined){
-            setScores([...scores, {name:playerName.value, time:time}]);
+        if(playerName.value !== ''){
+            if(scores !== undefined){
+                setScores([...scores, {name:playerName.value, time:time}]);
+            }else{
+                setScores([{name:playerName.value, time:time}]);
+            }
+            e.target.textContent = 'Saved';
+            e.target.disabled = true;
+            e.target.setAttribute('style', 'background-color: transparent; border:none; color: black');
         }else{
-            setScores([{name:playerName.value, time:time}]);
+            alert('You name should not be empty');
         }
     }
 

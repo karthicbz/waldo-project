@@ -188,7 +188,7 @@ html, body{
   width: 250px;
 }
 
-.save-score:active, .game-over-screen:active{
+.save-score:active{
   background-color: rgb(165, 73, 73);
   transform: scale(0.9);
 }

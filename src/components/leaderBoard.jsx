@@ -18,9 +18,11 @@ const LeaderBoard = ()=>{
                 setScores(score.data.score);
             }
         })
+        tempScores = [];
     }
 
     function handleClick(e){
+        // const playerScores = document.querySelector('.player-scores');
         getScoreData(e);
     }
 
@@ -33,6 +35,7 @@ const LeaderBoard = ()=>{
                 <button id="gametwo" onClick={handleClick}>Gametwo Scores</button>
                 <button id="gamethree" onClick={handleClick}>Gamethree Scores</button>
             </div>
+            <div className="player-scores">
             {scores !== undefined?scores.map(score=>{
                 return(
                     <div className="score-row" key={score.name+score.time}>
@@ -41,6 +44,7 @@ const LeaderBoard = ()=>{
                     </div>
                 )
             }):<div className="score-row"><p>No scores yet!</p></div>}
+            </div>
         </div>
     );
 }
