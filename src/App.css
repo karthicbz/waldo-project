@@ -10,6 +10,10 @@ html, body{
   height: 100%;
 }
 
+body{
+  background-color: lightcyan;
+}
+
 .start-page{
   display: flex;
   flex-direction: column;
@@ -27,13 +31,18 @@ html, body{
 }
 
 .startpage-refer-link{
-  border: 1px solid green;
+  /* border: 1px solid green; */
   width: max-content;
   margin:  0 auto;
   padding: 0.8rem;
   border-radius: 5px;
   background-color: rgb(90, 189, 90);
   color: white;
+  transition: box-shadow ease-in-out 0.1s;
+}
+
+.startpage-refer-link:hover{
+  box-shadow: 1px 1px 10px 1px rgb(90, 189, 90);
 }
 
 .Easy>img, .Medium>img, .Hard>img{
@@ -54,9 +63,15 @@ html, body{
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  box-shadow: 1px 1px 7px 0.7px rgb(224, 223, 223);
+  box-shadow: 1px 1px 7px 0.7px rgb(122, 194, 223);
   border-radius: 5px;
   gap: 3px;
+  transition: transform ease-in-out 0.1s, box-shadow ease-in-out 0.3s;
+}
+
+.Easy:hover, .Medium:hover, .Hard:hover{
+  transform: scale(1.1);
+  box-shadow: 1px 1px 16px 1px rgb(74, 179, 221);
 }
 
 .Easy:active, .Medium:active, .Hard:active{
@@ -72,6 +87,7 @@ html, body{
 
 .start-to-lead>a>button:hover{
   cursor: pointer;
+  box-shadow: 1px 1px 16px 1px rgb(224, 102, 102);
 }
 
 .start-to-lead>a>button:active{
@@ -92,6 +108,7 @@ html, body{
   border-radius: 4px;
   font-family: 'Anton', sans-serif;
   letter-spacing: 0.3px;
+  transition: box-shadow ease-in-out 0.1s;
 }
 
 .mouse-menu{
@@ -186,6 +203,13 @@ html, body{
   border-radius: 4px;
   color: white;
   width: 250px;
+  transition: transform ease-in-out 0.1s, box-shadow ease-in-out 0.1s;
+}
+
+.save-score:hover, .gameover-to-home:hover{
+  transform: scale(1.01);
+  box-shadow: 1px 1px 10px 1px rgb(228, 73, 73);
+  cursor: pointer;
 }
 
 .save-score:active{
@@ -259,6 +283,13 @@ html, body{
   font-size: 1.2rem;
   border-radius: 8px;
   font-family: 'Anton', sans-serif;
+  transition: transform ease-in-out 0.1s, box-shadow ease-in-out 0.2s;
+}
+
+.leaderboard-menu>button:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 1px 1px 10px 1px rgb(35, 102, 141);
 }
 
 .leaderboard-menu>button:active{
