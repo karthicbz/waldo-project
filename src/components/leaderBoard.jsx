@@ -18,11 +18,12 @@ const LeaderBoard = ()=>{
                 setScores(score.data.score);
             }
         })
-        tempScores = [];
+        // tempScores = [];
     }
 
     function handleClick(e){
         // const playerScores = document.querySelector('.player-scores');
+        setScores([]);
         getScoreData(e);
     }
 
