@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/waldo-project/static/css/main.dae5542f.css",
+    "main.css": "/waldo-project/static/css/main.850558fe.css",
     "main.js": "/waldo-project/static/js/main.173cbc61.js",
     "static/js/787.783ebc69.chunk.js": "/waldo-project/static/js/787.783ebc69.chunk.js",
     "static/media/waldo1.jpg": "/waldo-project/static/media/waldo1.a7733a062cce418d64c0.jpg",
     "static/media/waldo3.jpeg": "/waldo-project/static/media/waldo3.13cad7a0c447ea31f386.jpeg",
     "static/media/waldo2.jpeg": "/waldo-project/static/media/waldo2.6fc61e4ff2e1e3225768.jpeg",
     "index.html": "/waldo-project/index.html",
-    "main.dae5542f.css.map": "/waldo-project/static/css/main.dae5542f.css.map",
+    "main.850558fe.css.map": "/waldo-project/static/css/main.850558fe.css.map",
     "main.173cbc61.js.map": "/waldo-project/static/js/main.173cbc61.js.map",
     "787.783ebc69.chunk.js.map": "/waldo-project/static/js/787.783ebc69.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dae5542f.css",
+    "static/css/main.850558fe.css",
     "static/js/main.173cbc61.js"
   ]
 }
