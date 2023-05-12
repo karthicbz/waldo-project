@@ -1,5 +1,3 @@
-import gameOne from "../data/gameOne";
-
 const Characters = ({details})=>{
     return(
         <div className="characters">

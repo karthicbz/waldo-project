@@ -1,5 +1,3 @@
-import gameOne from "../data/gameOne";
-
 const MouseMenu = ({handleMenu, gameDetails})=>{
     return(
         <div className="mouse-menu" onClick={handleMenu}>

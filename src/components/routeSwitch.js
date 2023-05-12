@@ -1,11 +1,11 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import StartScreen from "./startScreen";
 import App from "../App";
 import LeaderBoard from "./leaderBoard";
 
 const RouteSwitch = ()=>{
     return(
-        <BrowserRouter>
+        <HashRouter>
             <Routes>
                 <Route path="/" element={<StartScreen />} />
                 <Route path="/:gameone" element={<App />}/>
@@ -13,7 +13,7 @@ const RouteSwitch = ()=>{
                 <Route path="/:gamethree" element={<App />}/>
                 <Route path="/leaderboard" element={<LeaderBoard />}/>
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 

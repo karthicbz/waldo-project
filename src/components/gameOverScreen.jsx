@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import app from '../scripts/firebaseInitializer';
-import { getDoc, getDocs, getFirestore } from "firebase/firestore";
-import { collection, updateDoc, doc, addDoc } from "firebase/firestore";
+import { getDocs, getFirestore } from "firebase/firestore";
+import { collection, updateDoc, doc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 
 const GameOverScreen = ({time, params})=>{
