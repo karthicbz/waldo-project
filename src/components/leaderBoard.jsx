@@ -18,7 +18,6 @@ const LeaderBoard = ()=>{
                 setScores(score.data.score);
             }
         })
-        // tempScores = [];
     }
 
     function handleClick(e){
@@ -37,7 +36,7 @@ const LeaderBoard = ()=>{
                 <button id="gamethree" onClick={handleClick}>Gamethree Scores</button>
             </div>
             <div className="player-scores">
-            {scores !== undefined?scores.map(score=>{
+            {scores !== undefined?scores.sort((a,b) => (a.time > b.time) ? 1 : ((b.time > a.time) ? -1 : 0)).map(score=>{
                 return(
                     <div className="score-row" key={score.name+score.time}>
                         <p>{score.name}</p>
